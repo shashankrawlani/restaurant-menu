@@ -5,8 +5,9 @@ const nextConfig = {
     loader: "cloudinary",
     path: "/",
   },
-
-  swcMinify: false,
+  basePath: "/nextjs-pages",
+  assetPrefix: "/nextjs-pages",
+  swcMinify: true,
 };
 
 module.exports = nextConfig;
