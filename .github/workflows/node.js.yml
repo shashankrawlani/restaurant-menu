@@ -28,16 +28,17 @@ jobs:
         cache: 'npm'
     # - run: npm ci
     - name: Install dependencies
-      run: |
-        if [ -e yarn.lock ]; then
-        yarn install --frozen-lockfile
-        elif [ -e package-lock.json ]; then
-        npm ci
-        else
-        npm i
-        fi
-    - run: yarn run build
-    - run: yarn run export
+      run: npm install
+        # |
+        # if [ -e yarn.lock ]; then
+        # yarn install --frozen-lockfile
+        # elif [ -e package-lock.json ]; then
+        # npm ci
+        # else
+        # npm i
+        # fi
+    - run: npm run build
+    - run: npm run export
     - name: Deploy 🚀
       uses: JamesIves/github-pages-deploy-action@v4
       with:
